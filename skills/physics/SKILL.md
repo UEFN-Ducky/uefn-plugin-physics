@@ -1,17 +1,21 @@
 ---
 name: physics
 description: "UEFN Physics Beta — enable project physics, FortPhysics props, compatible devices, Verse impulses/volume prop events, soccer + puzzle recipes"
-license: All Rights Reserved
+license: Ducky Source-Available License v1.0
 metadata:
   label: UEFN Physics
-  version: 1
-  author: Iliya Kovachki
-  copyright: Copyright 2026 Iliya Kovachki
+  version: 2
+  author: UEFN-Ducky
+  copyright: Copyright 2026 UEFN-Ducky
   allow_redistribute: false
   managed_by: uefn-ducky
 ---
 
 # UEFN Physics (Beta)
+
+**CRITICAL — editor mutations are SERIAL:** wire Volume / Prop Mover / Trigger
+refs one MCP call at a time → wait → next. Never parallel wire/spawn/save.
+Details: `skill_read_subskill("uefn", "batch_commands")`.
 
 Physics in UEFN simulates collisions, explosions, and motion (F=ma). Feature is
 **Beta** — publishable, but tools change often. Prefer a project copy before enabling.
