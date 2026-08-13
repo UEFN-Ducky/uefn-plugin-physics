@@ -55,6 +55,7 @@ thread; props will not collide correctly.
 ## Agent wiring
 
 - Place devices via `search_assets` under `/Game/Creative` (not `/Fortnite` gallery).
-- Label + folder every spawn (`set_actor_label`, `set_actor_folder`).
+- Prefer `label` + `folder` on `spawn_actor` (same tick). Separate `set_actor_label` /
+  `set_actor_folder` only when renaming an existing actor.
 - Creative device fields: `inspect_creative_device` / `set_creative_device_fields`.
 - Event array binds in Details (Functions ← Events) when not using Verse.

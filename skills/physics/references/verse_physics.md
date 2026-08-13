@@ -79,7 +79,7 @@ teleport with `SetLinearVelocity` / `SetAngularVelocity` if the ball keeps drift
 
 ## Agent checklist
 
-1. `get_verse_api("volume_device")` / `creative_prop` / `fort_character` before writing.
+1. `get_verse_api(name="volume_device")` / `get_verse_api(name="creative_prop")` / `get_verse_api(name="fort_character")` before writing.
 2. Write under `Verse/<System>/` — never dump at Verse root (`verse_layout`).
 3. `workspace_write_file` → `workspace_list_verse_errors`.
 4. Wire `@editable` refs with `wire_verse_device_ref` / `wire_verse_prop_assets` (one call at a time).

@@ -4,7 +4,7 @@ description: "UEFN Physics Beta — enable project physics, FortPhysics props, c
 license: Ducky Source-Available License v1.0
 metadata:
   label: UEFN Physics
-  version: 2
+  version: 3
   author: UEFN-Ducky
   copyright: Copyright 2026 UEFN-Ducky
   allow_redistribute: false
