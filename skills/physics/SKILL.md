@@ -1,17 +1,19 @@
 ---
 name: physics
 description: "UEFN Physics Beta — enable project physics, FortPhysics props, compatible devices, Verse impulses/volume prop events, soccer + puzzle recipes"
-license: Ducky Source-Available License v1.0
+license: MIT
 metadata:
   label: UEFN Physics
-  version: 3
+  version: 4
   author: UEFN-Ducky
-  copyright: Copyright 2026 UEFN-Ducky
-  allow_redistribute: false
+  copyright: Copyright 2026 Mindful Path Company, LLC
+  allow_redistribute: true
   managed_by: uefn-ducky
 ---
 
 # UEFN Physics (Beta)
+
+**Epic UEFN MCP:** Settings → MCPs → **UEFN MCP (Epic)** (`unreal-mcp`). Bridge tools: `unreal__list_toolsets` → `unreal__describe_toolset` → `unreal__call_tool` (toolsets — not flat `unreal__create_entity`). Map: `skill_read_subskill("uefn", "epic_mcp")`. Ducky tools below stay for this skill's domain when Epic does not cover it.
 
 **CRITICAL — editor mutations are SERIAL:** wire Volume / Prop Mover / Trigger
 refs one MCP call at a time → wait → next. Never parallel wire/spawn/save.
