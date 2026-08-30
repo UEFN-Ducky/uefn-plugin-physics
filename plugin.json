@@ -1,7 +1,7 @@
 {
   "id": "uefn-physics",
   "kind": "plugin",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "label": "UEFN Physics",
   "description": "UEFN Physics Beta \u2014 enable project physics, FortPhysics props, compatible devices, Verse impulses/volume prop events, soccer + puzzle recipes. Bundles the physics skill.",
   "min_app_version": "1.0.0",
