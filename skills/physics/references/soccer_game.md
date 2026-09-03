@@ -97,10 +97,12 @@ game_manager := class(creative_device):
 
     ResetBall()<suspends>:void=
         HidePos := vector3{X := 880.0, Y := 4000.0, Z := 200.0}
-        if (FootballA.TeleportTo[HidePos, IdentityRotation()]):
+        if (FootballA.TeleportTo[HidePos, IdentityRotation()]) {}
         Sleep(3.0)
         ResetPos := vector3{X := 0.0, Y := 0.0, Z := 400.0}
-        if (FootballA.TeleportTo[ResetPos, IdentityRotation()]):
+        if (FootballA.TeleportTo[ResetPos, IdentityRotation()]) {}
+        FootballA.SetLinearVelocity(vector3{})
+        FootballA.SetAngularVelocity(vector3{})
 ```
 
 Confirm event names with digests. Tweak Hide/Reset vectors to the field center.

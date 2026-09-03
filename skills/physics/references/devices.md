@@ -39,6 +39,9 @@ Preferred way to move level geometry that must **hit** physics props.
 - Place so the device intersects the prop; holographic arrow = move direction.
 - Common: Distance / Speed; **Should Move From Start** false when Switch/Volume starts it.
 - Collision behaviors (Advanced): Continue vs Stop for AI / Player / Prop.
+- **Limits (documented v42.10):** only **one** Prop Mover can be active at a time; the one
+  activated last takes precedence; the active mover can **rotate or translate, not both**.
+  Chain movers (Finish → next Start) instead of overlapping them.
 
 **Never use Sequencer** for motion that should interact with physics — different
 thread; props will not collide correctly.
@@ -57,5 +60,5 @@ thread; props will not collide correctly.
 - Place devices via `search_assets` under `/Game/Creative` (not `/Fortnite` gallery).
 - Prefer `label` + `folder` on `spawn_actor` (same tick). Separate `set_actor_label` /
   `set_actor_folder` only when renaming an existing actor.
-- Creative device fields: `inspect_creative_device` / `set_creative_device_fields`.
+- Creative device fields: Epic `DeviceToolset` `GetDeviceProperties` / `SetDeviceProperty`.
 - Event array binds in Details (Functions ← Events) when not using Verse.

@@ -66,16 +66,28 @@ No angular impulse/torque on character in current digest.
 ## Reset a physics ball (soccer pattern)
 
 ```verse
+using { /UnrealEngine.com/Temporary/SpatialMath }   # TeleportTo takes the X/Y/Z vector3
+
 ResetBall()<suspends> : void =
     HidePos := vector3{X := 880.0, Y := 4000.0, Z := 200.0}
-    if (FootballA.TeleportTo[HidePos, IdentityRotation()]):
+    if (FootballA.TeleportTo[HidePos, IdentityRotation()]) {}   # empty body on the SAME line
     Sleep(3.0)
     ResetPos := vector3{X := 0.0, Y := 0.0, Z := 400.0}
-    if (FootballA.TeleportTo[ResetPos, IdentityRotation()]):
+    if (FootballA.TeleportTo[ResetPos, IdentityRotation()]) {}
+    FootballA.SetLinearVelocity(vector3{})                      # kill drift after the teleport
+    FootballA.SetAngularVelocity(vector3{})
 ```
 
-Teleport positions are level-specific — measure in editor. Zero velocity after
-teleport with `SetLinearVelocity` / `SetAngularVelocity` if the ball keeps drifting.
+`if (...):` followed by an unindented next statement is parse error 3100 — an empty
+body must be `{}` on the same line.
+
+**Two `vector3` families, and these APIs disagree:** the impulse/velocity calls above
+take `(/Verse.org/SpatialMath:)vector3` (fields `Forward` / `Left` / `Up`), while
+`creative_prop.TeleportTo` takes `(/UnrealEngine.com/Temporary/SpatialMath:)vector3`
+(fields `X` / `Y` / `Z`). In a file that imports both, qualify the type the way the
+digest does or the build silently picks the wrong one.
+
+Teleport positions are level-specific — measure in editor.
 
 ## Agent checklist
 
