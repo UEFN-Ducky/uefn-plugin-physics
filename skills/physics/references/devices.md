@@ -31,6 +31,10 @@ Detect physics props entering/exiting:
 
 Device bindings: **On Physics Enter** / **On Physics Exit** (payload: Creative Prop).
 
+Volume / trigger / barrier **size** is a Details property (`Width` / `Height` /
+`Depth` / zone) via `SetDeviceProperty` — **never actor Scale** (breaks Fortnite
+devices). Location and rotation are fine.
+
 Verse listenables on `volume_device`: `PropEnterEvent` / `PropExitEvent`
 (`listenable(creative_prop)`). Confirm with digests before coding.
 
