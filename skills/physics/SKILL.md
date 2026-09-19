@@ -4,7 +4,7 @@ description: "UEFN Physics Beta — enable project physics, FortPhysics props, c
 license: MIT
 metadata:
   label: UEFN Physics
-  version: 6
+  version: 7
   author: UEFN-Ducky
   copyright: Copyright 2026 Mindful Path Company, LLC
   allow_redistribute: true
@@ -13,11 +13,9 @@ metadata:
 
 # UEFN Physics (Beta)
 
-**Tool order (HARD):** 1) Official UEFN MCP first — `ducky_get_status`; when `epic_mcp_online` use nested `unreal__*` (`unreal__list_toolsets` → `unreal__describe_toolset` → `unreal__call_tool`; 5+ ops → ProgrammaticToolset `execute_tool_script`). 2) Ducky listener second (Epic-offline gaps + Ducky-only tools listed in this skill). 3) `execute_python` LAST — never a placement/layout path, even if Epic and listener already failed. Never spawn, move, or assign materials. Map: `skill_read_subskill("uefn", "epic_mcp")`.
-
 **CRITICAL — editor mutations are SERIAL:** wire Volume / Prop Mover / Trigger
 refs one MCP call at a time → wait → next. Never parallel wire/spawn/save.
-Details: `skill_read_subskill("uefn", "batch_commands")`.
+Details: SERIAL: one mutating/editor call per assistant message..
 
 Physics in UEFN simulates collisions, explosions, and motion (F=ma). Feature is
 **Beta** — publishable, but tools change often. Prefer a project copy before enabling.
@@ -26,13 +24,12 @@ Physics in UEFN simulates collisions, explosions, and motion (F=ma). Feature is
 
 ## Enable
 
-1. Project → Project Settings
-2. Beta / Experimental Access → check **Physics**
+Use the island / project tool for Beta Physics (do not send Project Settings homework).
 
 ## Golden path
 
 ```
-1. Enable Physics in Project Settings
+1. Enable Physics via the project tool
 2. Place or import prop → ensure Simple Collision (sphere/box when possible)
 3. Add Fort Physics (Details → + Add → Fort Physics) OR Fortnite Tools → Add Physics
 4. Simulate Physics = true; tune Mass / Damping / Impulse On Hit
@@ -86,3 +83,7 @@ Details: load `verse_physics`.
   Load when: Building a pickaxe soccer / ball game
 - `references/puzzle_dungeon.md` — Physics puzzle room recipe
   Load when: Cubes, moving platforms, bridge drop puzzles
+
+## Verify
+
+`device_graph_audit` on wired volumes / movers. Enable Physics via the project tool — do not send Project Settings homework.
