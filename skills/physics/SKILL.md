@@ -4,7 +4,7 @@ description: "UEFN Physics Beta — enable project physics, FortPhysics props, c
 license: MIT
 metadata:
   label: UEFN Physics
-  version: 7
+  version: 8
   author: UEFN-Ducky
   copyright: Copyright 2026 Mindful Path Company, LLC
   allow_redistribute: true
@@ -87,3 +87,11 @@ Details: load `verse_physics`.
 ## Verify
 
 `device_graph_audit` on wired volumes / movers. Enable Physics via the project tool — do not send Project Settings homework.
+
+## 42.30 notes
+
+- Rocket Launchers now push characters on impact and Shockwave Grenades launch
+  characters and physics props correctly on physics-enabled islands (they used to
+  pull them back to the blast point).
+- Epic `PhysicsToolsets.PhysicsAssetToolset` creates and edits Physics Assets when
+  `epic_mcp_online` (uefn `epic_toolsets`).
